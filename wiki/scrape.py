@@ -20,7 +20,7 @@ wikipedia.set_lang('fr')
 samples = []
 
 pages = open("../fr_ebauches/société_ebauches.txt", "r").read().splitlines()
-# pages = list(pd.read_csv("../fr_ebauches/french_ebauches.tsv", sep="\t")["title"].values)
+pages.extend(list(pd.read_csv("../fr_ebauches/french_ebauches.tsv", sep="\t")["title"].values))
 
 for item in tqdm.tqdm(pages):
     try:
